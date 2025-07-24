@@ -1,0 +1,20 @@
+Se han borrado las siguientes tablas:
+	- prestamos_archivo (borrado tambien sus tablas relativas: l_estado_pedido y l_tipo_producto)
+	- hoja_mtn25
+	- hoja_mtn50
+	- prueba (no esta en el modelo de datos del pdf)
+	- pnoa_2024 (no esta en el modelo de datos del pdf)
+	- metadatos (pese a que aparece en el modelo de datos del pdf, no se encuentra en el .sql del modelo de datos)
+
+Quitando esto, el resto de tablas del modelo de datos y sus tablas relativas del pdf estan todas en la base de datos.
+
+
+
+Esquemas:
+    - cms: 8 tablas.
+    - fototeca: 24 tablas.
+    - public: 4 tablas.
+    - rss: 1 tabla.
+    - tiger: 34 tablas.
+    - tiger_data: 0 tablas.
+    - topology: 2 tablas.

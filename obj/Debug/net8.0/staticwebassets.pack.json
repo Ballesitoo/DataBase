@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "/var/www/html/fototeca/DataBase/obj/Debug/net8.0/scopedcss/projectbundle/DataBase.bundle.scp.css",
+      "PackagePath": "staticwebassets/DataBase.bundle.scp.css"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/Archivos/modelo_datos_fototeca_CNIG.sql",
+      "PackagePath": "staticwebassets/Archivos/modelo_datos_fototeca_CNIG.sql"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/Archivos/sql.txt",
+      "PackagePath": "staticwebassets/Archivos/sql.txt"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/Institut.png",
+      "PackagePath": "staticwebassets/Institut.png"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/Prototipo_GeoData.png",
+      "PackagePath": "staticwebassets/Prototipo_GeoData.png"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/var/www/html/fototeca/DataBase/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.DataBase.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.DataBase.props",
+      "PackagePath": "build\\DataBase.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.DataBase.props",
+      "PackagePath": "buildMultiTargeting\\DataBase.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.DataBase.props",
+      "PackagePath": "buildTransitive\\DataBase.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

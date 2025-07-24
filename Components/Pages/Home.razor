@@ -1,0 +1,55 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<AuthorizeView>
+    <Authorized>
+        <PageTitle>Home</PageTitle>
+
+
+    </Authorized>
+    <NotAuthorized>
+        <PageTitle>Iniciar sessió</PageTitle>
+
+        <div class="container-fluid d-flex justify-content-center align-items-center" style="background-image: url('Prototipo_GeoData.png');height: 87vh">
+            <div>
+                <div class="mb-4 text-center">
+                    <img src="Institut.png" alt="Logo" class="img-fluid" style="max-width: 150px;" />
+                    <h1 class="mb-3 fw-bold">GeoData Manager</h1>
+                    <p class="mb-4 text-muted">Iniciar sessió per continuar</p> 
+                </div>
+
+                <RadzenLogin AllowRegister="false"
+                  AllowResetPassword="false"
+                  FormFieldVariant="Variant.Outlined"
+                  LoginText="Inicia sessió"
+                  UserText="Usuari"
+                  PasswordText="Contrasenya"
+                  Login="@((args) => Login(args.Username, args.Password))" />
+
+            </div>
+            @if (nom_usuari == "dballester")
+            {
+              <p>@nom_usuari es correcto</p>
+            }
+            else
+            {
+              <p>@nom_usuari NO es correcto</p>
+            }
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+
+  //  Variables Login
+  private string nom_usuari = String.Empty;
+  private string password = String.Empty;
+
+  void Login(string usuari_nom, string usuari_password)
+  {
+      nom_usuari = usuari_nom;
+      password = usuari_password;
+      Console.WriteLine($"Username: {nom_usuari}, password: {password}");
+      //StateHasChanged();
+  }
+}

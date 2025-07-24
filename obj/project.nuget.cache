@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "CokOBVYlRfY=",
+  "success": true,
+  "projectFilePath": "/var/www/html/fototeca/DataBase/DataBase.csproj",
+  "expectedPackageFiles": [
+    "/home/ubuntu_admin/.nuget/packages/microsoft.aspnetcore.authorization/8.0.0/microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.aspnetcore.components/8.0.0/microsoft.aspnetcore.components.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.aspnetcore.components.analyzers/8.0.0/microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.aspnetcore.components.forms/8.0.0/microsoft.aspnetcore.components.forms.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.aspnetcore.components.web/8.0.0/microsoft.aspnetcore.components.web.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.aspnetcore.metadata/8.0.0/microsoft.aspnetcore.metadata.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/microsoft.jsinterop/8.0.0/microsoft.jsinterop.8.0.0.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/radzen.blazor/7.1.5/radzen.blazor.7.1.5.nupkg.sha512",
+    "/home/ubuntu_admin/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
