@@ -1,7 +1,23 @@
 ﻿@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Authorization;
+
+@using System;
+@using BCrypt.Net;
+@using Microsoft.EntityFrameworkCore;
+@inject MyDbContext Db;
+@using DataBase.Entidades;
+@inject AlertService alertService;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager Navigation
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@implements IDisposable
 
 <div class="page">
 
+    
     <AuthorizeView>
         <Authorized>
             <div class="sidebar">
@@ -9,11 +25,12 @@
             </div>
         </Authorized>
         <NotAuthorized>
-            <div class="sidebar">
+            <!--<div class="sidebar">
                 <NavMenu />
-            </div>
+            </div>-->
         </NotAuthorized>
     </AuthorizeView>
+    
 
     <main>
         <RadzenComponents @rendermode="InteractiveServer" />
@@ -32,3 +49,24 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+@code {
+    private AuthenticationState? _authState;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthenticationStateProvider.AuthenticationStateChanged += OnAuthStateChanged;
+        _authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+    }
+
+    private async void OnAuthStateChanged(Task<AuthenticationState> task)
+    {
+        _authState = await task;
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthStateChanged;
+    }
+}

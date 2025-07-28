@@ -1,10 +1,23 @@
 ﻿@page "/"
 @rendermode InteractiveServer
 
+@using System;
+@using BCrypt.Net;
+@using Microsoft.EntityFrameworkCore;
+@inject MyDbContext Db;
+@using DataBase.Entidades;
+@inject AlertService alertService;
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager Navigation
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+
+
 <AuthorizeView>
     <Authorized>
         <PageTitle>Home</PageTitle>
 
+        <p>Hola, @context.User.Identity.Name</p>
 
     </Authorized>
     <NotAuthorized>
@@ -27,29 +40,44 @@
                   Login="@((args) => Login(args.Username, args.Password))" />
 
             </div>
-            @if (nom_usuari == "dballester")
-            {
-              <p>@nom_usuari es correcto</p>
-            }
-            else
-            {
-              <p>@nom_usuari NO es correcto</p>
-            }
         </div>
     </NotAuthorized>
 </AuthorizeView>
 
 @code {
+  private Usuario user = new Usuario();
 
-  //  Variables Login
-  private string nom_usuari = String.Empty;
-  private string password = String.Empty;
+  //string contraseña = BCrypt.HashPassword("Ubuntu25"); Te crea el hash de X texto, con BCrypt.Verify() te mira esto y revisa hashes
 
-  void Login(string usuari_nom, string usuari_password)
+  private async Task Login(string usuari_nom, string usuari_password)
   {
-      nom_usuari = usuari_nom;
-      password = usuari_password;
-      Console.WriteLine($"Username: {nom_usuari}, password: {password}");
       //StateHasChanged();
+      user = await Db.Usuarios.FirstOrDefaultAsync(u => u.Nombre == usuari_nom);
+
+      if (user != null)
+      {
+          bool valid = BCrypt.Verify(usuari_password, user.Contrasenya);
+          if (valid)
+          {
+            Console.WriteLine("Login correcto");
+
+            // Autenticamos al usuario si todo va bien
+            await localStorage.SetItemAsync("authUser", user.Nombre);
+
+            if (AuthenticationStateProvider is CustomAuthenticationStateProvider customAuth)
+            {
+                customAuth.MarkUserAsAuthenticated(user.Nombre);
+                Navigation.NavigateTo("/database/", true);
+            }
+          }
+          else
+          {
+              await alertService.ShowAlert("Contraseña incorrecta", "Problema con la contraseña");
+          }
+      }
+      else
+      {
+          await alertService.ShowAlert("Usuario incorrecto", "Problema con el usuario");
+      }
   }
 }

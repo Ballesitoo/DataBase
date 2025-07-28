@@ -18,3 +18,7 @@ Esquemas:
     - tiger: 34 tablas.
     - tiger_data: 0 tablas.
     - topology: 2 tablas.
+
+
+Se ha añadido en el schema de fototeca la tabla de Usuarios, donde supongo que solo va a haber un solo usuario que va a poner los update, los post y demas
+cosas de las tablas, esta el la columna de id por si acaso autoincremental, el nombre y la contraseña (esta se ha añadido codificada.)
